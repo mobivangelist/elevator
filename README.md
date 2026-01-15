@@ -45,3 +45,26 @@ Build a single-elevator controller with a simple command loop:
 2. If doors are open, `step` does not move (prints “doors open”).
 3. `call -1` or `call 999` fails with a domain error.
 4. Multiple calls queue and are processed FIFO (or “nearest next” if you want a stretch goal).
+
+## Example REPL session
+
+```
+> status
+floor=0 door=closed motion=idle target=none queue=[]
+> call 3
+Enqueued request to floor 3.
+> step
+Moved to floor 1 (target 3).
+> step
+Moved to floor 2 (target 3).
+> step
+Moved to floor 3. Arrived; doors opened.
+> step
+Doors are open; elevator does not move.
+> close
+Doors closed.
+> status
+floor=3 door=closed motion=idle target=none queue=[]
+> quit
+Bye.
+```
