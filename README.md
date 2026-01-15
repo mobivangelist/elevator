@@ -68,3 +68,10 @@ floor=3 door=closed motion=idle target=none queue=[]
 > quit
 Bye.
 ```
+
+## How to run
+
+```bash
+cd elevator
+php bin/elevator.php
+```
